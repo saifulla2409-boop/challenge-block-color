@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fast-paced color matching game built with vanilla JavaScript." />
+    <title>Color Blocks Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div>
+          <p class="eyebrow">Arcade Lab</p>
+          <h1>Color Blocks Challenge</h1>
+        </div>
+        <p class="tagline">Think fast. Match faster. Climb the levels.</p>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="game-panel">
+        <div class="hud">
+          <div class="hud-card">
+            <p>Level</p>
+            <strong id="level">1</strong>
+          </div>
+          <div class="hud-card">
+            <p>Score</p>
+            <strong id="score">000</strong>
+          </div>
+          <div class="hud-card">
+            <p>Lives</p>
+            <strong id="lives">3</strong>
+          </div>
+          <div class="hud-card">
+            <p>Time</p>
+            <strong id="timer">60s</strong>
+          </div>
+        </div>
+
+        <div class="target-card">
+          <p>Find the block with this color:</p>
+          <div class="target-preview" id="targetPreview" aria-live="polite"></div>
+          <code id="targetCode">#ffffff</code>
+        </div>
+
+        <div class="controls">
+          <button class="btn primary" id="startBtn">Start / Restart</button>
+          <button class="btn ghost" id="hintBtn">Hint</button>
+          <p class="status-text" id="statusText" role="status" aria-live="polite">Click start to play.</p>
+        </div>
+      </section>
+
+      <section class="board-panel">
+        <div class="board-header">
+          <h2>Color Grid</h2>
+          <p id="roundInfo">Round 0 · 0 correct streak</p>
+        </div>
+        <div class="grid" id="grid" aria-label="Color block grid"></div>
+      </section>
+
+      <section class="how-to">
+        <h2>How to play</h2>
+        <ol>
+          <li>Hit start to spawn a fresh grid of colorful blocks.</li>
+          <li>Match the block that exactly matches the preview color.</li>
+          <li>Correct picks add time and score. Wrong picks cost a life.</li>
+          <li>Level up every three correct matches — the grid grows!</li>
+        </ol>
+        <p class="tip">
+          Pro tip: tap <strong>Hint</strong> to briefly highlight the correct block. Use sparingly — it costs points.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Built with ❤️ using vanilla HTML, CSS and JavaScript.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
